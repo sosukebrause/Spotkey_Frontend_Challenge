@@ -2,20 +2,28 @@ $(document).ready(function () {
   function getDataFromStart() {
     $.ajax({
       type: "GET",
-      url:
-        "https://api.openweathermap.org/data/2.5/weather?q=san+francisco&appid=c1dc5cf44c3a5ebaadb89b904175bcca",
+      url: "http://127.0.0.1:8080/",
       dataType: "json",
     }).then((res) => {
       console.log(res);
-      $("#results").append(res.name);
-      setTimeout(function () {
-        // $(".loading").attr("class", "hide");
-        $(".spinner-border").attr("class", "spinner-border hide");
-      }, 1000);
+      $("#btnSubmit").on("click", function (e) {
+        e.preventDefault();
+        console.log("clicked");
+        $("form").hide(100);
+        $(".loading").show(1000);
+        setTimeout(() => {
+          $("form").show();
+          $(".loading").hide();
+        }, 2000);
+      });
+
+      //   $("#results").append(res.name);
+      //   setTimeout(function () {
+      //     $(".loading").attr("class", "loading hide");
+      //     $(".spinner-border").attr("class", "spinner-border hide");
+      //   }, 1000);
     });
   }
-  ``;
-
   getDataFromStart();
 
   $("#btnSubmit").on("click", function (e) {

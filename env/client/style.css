@@ -6,10 +6,16 @@
   z-index: 20;
 } */
 
-.hide {
+.loading {
   display: none;
 }
 
-.show {
-  display: block;
+.form-group {
+  margin: 10px;
+  max-width: 500px;
+}
+
+#btnSubmit {
+  margin-left: auto;
+  margin-right: auto;
 }
