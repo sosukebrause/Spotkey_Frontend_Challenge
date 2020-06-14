@@ -1,0 +1,24 @@
+{
+  "name": "Frontend_Challenge",
+  "version": "1.0.0",
+  "description": "INSTRUCTIONS This is a front end coding challenge meant to test the developers proficiency building a simple API enabled web application. Your task is to build an interface that interacts logically with this API. The interface should have 3 components:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sosukebrause/Spotkey_Frontend_Challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sosukebrause/Spotkey_Frontend_Challenge/issues"
+  },
+  "homepage": "https://github.com/sosukebrause/Spotkey_Frontend_Challenge#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1"
+  }
+}

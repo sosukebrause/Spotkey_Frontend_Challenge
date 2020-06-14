@@ -2,7 +2,7 @@ $(document).ready(function () {
   function getDataFromStart() {
     $.ajax({
       type: "GET",
-      url: "http://127.0.0.1:8080/",
+      url: "http://localhost:8080/spotkey",
       dataType: "json",
     }).then((res) => {
       console.log(res);
@@ -28,8 +28,8 @@ $(document).ready(function () {
 
   $("#btnSubmit").on("click", function (e) {
     e.preventDefault();
-    var x = $("#longitude").val();
-    var y = $("#latitude").val();
+    var x = $("#latitude").val();
+    var y = $("#longitude").val();
     const coordinates = [x, y];
 
     $.ajax({
