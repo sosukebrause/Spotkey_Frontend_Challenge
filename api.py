@@ -1,9 +1,12 @@
 from flask import Flask, request
+from flask_cors import CORS, cross_origin
+
 import json
 import uuid
 import time
 
 app = Flask(__name__) 
+cors = CORS(app)
 
 coordinates = {
   "6c1e79dc-a830-11ea-a91d-dca90493994f": ["1.234", "5.6789"],
@@ -15,7 +18,7 @@ coordinates = {
 def index():
 	print(request.method)
 	if request.method=='GET':
-		time.sleep(1)
+		time.sleep(3)
 		return json.dumps(coordinates)
 	elif request.method=='POST':
 		data = request.json
@@ -24,4 +27,3 @@ def index():
 
 if __name__ == '__main__': 
 	app.run(debug=True, port=8080)
-
