@@ -43,12 +43,14 @@ $(document).ready(async function () {
     console.log("clicked");
     $(".btnGet").hide(100);
     $(".loading").show(1000);
+
     const getResponse = await getSpotkeys();
     const results = JSON.parse(getResponse);
     console.log(results);
     for (let key in results) {
       console.log(key);
       console.log(results[key]);
+      $(".res").append(`<p>${key}: ${results[key]}</p>`);
     }
     $("form").show();
     $(".loading").hide();
@@ -56,15 +58,12 @@ $(document).ready(async function () {
   $("#btnSubmit").on("click", async function (e) {
     e.preventDefault();
     console.log("clicked");
-    $(".btnSubmit").hide(100);
-    $(".loading").show(1000);
-    const newData = { coordinates: ["1234", "234.5"] };
+    var x = $("#latitude").val();
+    var y = $("#longitude").val();
+    const newData = { coordinates: [x, y] };
 
     const postResponse = await postSpotkey(newData);
     console.log(postResponse);
-
-    $("form").show();
-    $(".loading").hide();
   });
 
   // $("#btnSubmit").on("click", function (e) {
