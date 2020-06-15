@@ -38,12 +38,15 @@ async function postSpotkey(spotkey) {
   }
 }
 $(document).ready(async function () {
+  $(".res").hide();
+  $("#btnRefresh").hide();
+
   $("#btnGet").on("click", async function (e) {
     e.preventDefault();
     console.log("clicked");
     $(".btn").hide(100);
     $(".loading").show(1000);
-    $(".input").val("");
+    $("input").val("");
 
     const getResponse = await getSpotkeys();
     const results = JSON.parse(getResponse);
@@ -53,15 +56,20 @@ $(document).ready(async function () {
       console.log(results[key]);
       $(".res").append(`<p>${key}: ${results[key]}</p>`);
     }
-    $(".form").show();
     $(".loading").hide();
+    $(".res").show();
+    $("#btnRefresh").show();
   });
   $("#btnSubmit").on("click", async function (e) {
     e.preventDefault();
+    {
+      alert("Added to list");
+    }
     console.log("clicked");
     var x = $("#latitude").val();
     var y = $("#longitude").val();
     const newData = { coordinates: [x, y] };
+    $("input").val("");
 
     const postResponse = await postSpotkey(newData);
     console.log(postResponse);
