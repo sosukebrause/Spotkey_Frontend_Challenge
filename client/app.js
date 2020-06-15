@@ -41,8 +41,9 @@ $(document).ready(async function () {
   $("#btnGet").on("click", async function (e) {
     e.preventDefault();
     console.log("clicked");
-    $(".btnGet").hide(100);
+    $(".btn").hide(100);
     $(".loading").show(1000);
+    $(".input").val("");
 
     const getResponse = await getSpotkeys();
     const results = JSON.parse(getResponse);
@@ -52,7 +53,7 @@ $(document).ready(async function () {
       console.log(results[key]);
       $(".res").append(`<p>${key}: ${results[key]}</p>`);
     }
-    $("form").show();
+    $(".form").show();
     $(".loading").hide();
   });
   $("#btnSubmit").on("click", async function (e) {

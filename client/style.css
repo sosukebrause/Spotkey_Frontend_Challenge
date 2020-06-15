@@ -12,10 +12,15 @@
 
 .form-group {
   margin: 10px;
-  max-width: 500px;
+  max-width: 400px;
 }
 
-#btnSubmit {
-  margin-left: auto;
-  margin-right: auto;
+.btn-container {
+  display: flex;
+  justify-content: right;
+}
+
+.btn {
+  margin-left: 20px;
+  margin-top: 15px;
 }

@@ -26,27 +26,28 @@
     </div>
     <form>
       <div class="form-group">
-        <label for="latitude">latitude</label>
+        <label for="latitude">Latitude</label>
         <input
           type="text"
           class="form-control"
           id="latitude"
-          aria-describedby="emailHelp"
         />
       </div>
       <div class="form-group">
-        <label for="longitude">longitude</label>
+        <label for="longitude">Longitude</label>
         <input type="text" class="form-control" id="longitude" />
       </div>
-      <button id="btnSubmit" type="submit" class="btn btn-primary">
-        Create
-      </button>
-    </form>    
+      <div class="btn-container">
 
+        <button id="btnSubmit" type="submit" class="btn btn-success">
+          Add Coordinates
+        </button>
+      </form>    
       <button id="btnGet" type="submit" class="btn btn-primary">
         Get Spotkeys
       </button>
     </form>
+  </div>
 
     <div class="res"></div>
     <script
